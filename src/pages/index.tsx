@@ -1,24 +1,20 @@
-import type { NextPage, InferGetStaticPropsType, GetStaticProps } from "next";
+import type { NextPage } from "next";
+import useSWR from "swr";
 
-type HomePropsType = {
-	name: string;
-	age: number;
-};
+import type { HelloType } from "@/libs/types/home";
 
-export const getStaticProps: GetStaticProps<{
-	personalData: HomePropsType;
-}> = async () => {
-	const res = await fetch("http://localhost:3000/api/hello");
-	const personalData = await res.json();
-	return { props: { personalData } };
-};
+const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
-const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
-	personalData,
-}) => {
+const Home: NextPage = () => {
+	const { data, error, isLoading } = useSWR<HelloType>("/api/hello", fetcher);
+
+	if (error) return <div>Failed to load</div>;
+	if (isLoading) return <div>Loading...</div>;
+	if (!data) return null;
+
 	return (
 		<>
-			Hello, I am {personalData.name} and {personalData.age} years old.
+			Hello, I am {data.name} and {data.age} years old.
 		</>
 	);
 };

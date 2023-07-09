@@ -1,6 +1,6 @@
 import type { FC, PropsWithChildren } from "react";
 
-import { ExtraClassProps } from "@/utils/types";
+import { ExtraClassProps } from "@/libs/types/other";
 
 const Col: FC<PropsWithChildren & ExtraClassProps> = ({
 	children,

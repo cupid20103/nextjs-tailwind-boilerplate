@@ -1,6 +1,6 @@
 import type { FC, PropsWithChildren } from "react";
 
-import type { ExtraClassProps } from "@/utils/types";
+import { ExtraClassProps } from "@/libs/types/other";
 
 const Row: FC<PropsWithChildren & ExtraClassProps> = ({
 	children,
