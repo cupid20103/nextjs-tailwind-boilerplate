@@ -3,10 +3,10 @@ import type { FC, PropsWithChildren } from "react";
 import { ExtraClassProps } from "@/utils/types";
 
 const Col: FC<PropsWithChildren & ExtraClassProps> = ({
-  children,
-  className,
+	children,
+	className,
 }) => {
-  return <div className={`flex flex-col ${className}`}>{children}</div>;
+	return <div className={`flex flex-col ${className}`}>{children}</div>;
 };
 
 export default Col;

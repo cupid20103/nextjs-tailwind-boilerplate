@@ -2,13 +2,13 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
 type HelloType = {
-  name: string;
-  age: number;
+	name: string;
+	age: number;
 };
 
 export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<HelloType>
+	req: NextApiRequest,
+	res: NextApiResponse<HelloType>
 ) {
-  res.status(200).json({ name: "Kiyoshi Araki", age: 27 });
+	res.status(200).json({ name: "Kiyoshi Araki", age: 27 });
 }

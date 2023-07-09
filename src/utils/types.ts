@@ -1,3 +1,3 @@
 export interface ExtraClassProps {
-  className?: string;
+	className?: string;
 }
