@@ -3,7 +3,7 @@
 	"author": {
 		"name": "Kiyoshi Araki"
 	},
-	"description": "Welcome to Next.js-tailwindcss-boilerpalte!",
+	"description": "Welcome to Next.js v13 & Tailwind CSS boilerpalte!",
 	"version": "0.1.0",
 	"private": true,
 	"license": "MIT",
